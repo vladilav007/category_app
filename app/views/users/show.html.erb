@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+<%= link_to "Back to users", users_path %>
+ <%= link_to @user do %><h3><%= @user.name %></h3><% end %>
+   <strong>Categories:</strong>
+  <ul>
+  <% @user.categories.each do |c|  %>
+      <li><%= link_to "#{c.title}", category_path(c) %></li>
+    <% end %>
+  </ul>
+
