@@ -12,7 +12,7 @@ class ExpensesController < ApplicationController
 
   # GET /expenses/new
   def new
-    @expense = Expense.new
+    @expense = Expense.new(category_id: params[:category_id])
   end
 
   # GET /expenses/1/edit
@@ -52,7 +52,7 @@ class ExpensesController < ApplicationController
     @expense.destroy
 
     respond_to do |format|
-      format.html { redirect_to expenses_url, notice: "Expense was successfully destroyed." }
+      format.html { redirect_to root_url, notice: "Expense was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -63,8 +63,12 @@ class ExpensesController < ApplicationController
       @expense = Expense.find(params[:id])
     end
 
+    def set_category
+      @category = Category.find(params[:category_id])
+    end
+
     # Only allow a list of trusted parameters through.
     def expense_params
-      params.require(:expense).permit(:title, :price)
+      params.require(:expense).permit(:title, :price, :category_id)
     end
 end
