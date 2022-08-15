@@ -26,6 +26,9 @@
     <%= form.text_field :category_id, :value => @expense.category_id, readonly: true %>
   </div>
 
+  <%= form.date_select :created_at, :order => [:day, :month, :year] %>
+
+
   <div>
     <%= form.submit %>
   </div>

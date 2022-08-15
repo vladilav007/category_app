@@ -1,12 +1,17 @@
 <div id="<%= dom_id expense %>">
   <p>
     <strong>Title:</strong>
-    <%= expense.title %>
+    <%= expense.title.humanize + ":" %>
   </p>
 
   <p>
     <strong>Price:</strong>
     <%= expense.price %>
+  </p>
+
+  <p>
+    <strong>Created_at:</strong>
+    <%= expense.created_at %>
   </p>
 
 </div>

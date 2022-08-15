@@ -3,7 +3,13 @@ class ExpensesController < ApplicationController
 
   # GET /expenses or /expenses.json
   def index
-    @expenses = Expense.all
+    @search = Expense.ransack(params[:q])
+    @expenses = @search.result
+  end
+
+  def search
+    index
+    render :index
   end
 
   # GET /expenses/1 or /expenses/1.json
@@ -69,6 +75,6 @@ class ExpensesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def expense_params
-      params.require(:expense).permit(:title, :price, :category_id)
+      params.require(:expense).permit(:title, :price, :category_id, :created_at)
     end
 end

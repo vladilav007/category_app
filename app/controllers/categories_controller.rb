@@ -8,6 +8,8 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1 or /categories/1.json
   def show
+    @search = Expense.ransack(params[:q])
+    @expenses = @search.result
   end
 
   # GET /categories/new
