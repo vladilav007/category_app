@@ -16,10 +16,10 @@
         <%= search_form_for @search, url: search_expenses_path, class: "form-inline col-md-8 col-md-offset-1" do |f| %>
           <div class="input-daterange">
             <div class="col-md-4">
-              <%= f.search_field :created_at_gteq,  class: "form-control", placeholder: 'Start date' %>
+              <%= f.search_field :created_at_gteq,  class: "form-control", placeholder: 'Start date yyyy-mm-dd' %>
             </div>
             <div class="col-md-4 col-md-offset-1">
-              <%= f.search_field :created_at_lteq,  class: "form-control", placeholder: 'End date' %>
+              <%= f.search_field :created_at_lteq,  class: "form-control", placeholder: 'End date yyyy-mm-dd' %>
             </div>
           </div>
 

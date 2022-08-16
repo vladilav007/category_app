@@ -1,24 +1,10 @@
-# README
+__To download and run this project, run the following from your WSL command line:__
+---
+* git clone https://github.com/vladilav007/category_app.git
+* cd category_app
+* bundle install
+* yarn install
+* rails db:migrate
+* rails s
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+> Could can then visit http://localhost:3000.
